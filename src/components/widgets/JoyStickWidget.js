@@ -82,11 +82,17 @@ class JoyWrapper extends Component {
 
     managerListener2(manager) {
         manager.on('move', (e, stick) => {
-            if (stick.direction.angle === 'up' || stick.direction.angle === 'down') {
+            if (stick.direction.angle === 'up') {
                 this.socket.send(JSON.stringify({direction: "rotateY"}));
             }
-            if (stick.direction.angle === 'left' || stick.direction.angle === 'right') {
+            if (stick.direction.angle === 'down') {
                 this.socket.send(JSON.stringify({direction: "rotateX"}));
+            }
+            if (stick.direction.angle === 'left') {
+                this.socket.send(JSON.stringify({direction: "rotateX"}));
+            }
+            if (stick.direction.angle === 'right') {
+                this.socket.send(JSON.stringify({direction: "rotateY"}));
             }
         })
         manager.on('end', () => {

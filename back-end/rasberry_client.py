@@ -63,10 +63,10 @@ def handleServo(val):
 	print ('Servo 2:', servo_2)
 	print ('Servo 3:', servo_3)
 	
-	# os.system("echo 0=" + str(servo_0) + "us > /dev/servoblaster")
-	# os.system("echo 1=" + str(servo_1) + "us > /dev/servoblaster")
-	# os.system("echo 2=" + str(servo_2) + "us > /dev/servoblaster")
-	# os.system("echo 3=" + str(servo_3) + "us > /dev/servoblaster")
+	os.system("echo 0=" + str(servo_0) + "us > /dev/servoblaster")
+	os.system("echo 1=" + str(servo_1) + "us > /dev/servoblaster")
+	os.system("echo 2=" + str(servo_2) + "us > /dev/servoblaster")
+	os.system("echo 3=" + str(servo_3) + "us > /dev/servoblaster")
 
 async def rasberry_client(HOST, PORT):
 	# web socket connection with extra headers being sent to detect this device as a rasberry pie.
