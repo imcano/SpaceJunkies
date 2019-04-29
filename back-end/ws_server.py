@@ -24,7 +24,7 @@ RP_STATUS = False
 def state_event():
     return json.dumps({'type': 'state', **STATE})
 
-# simpe state of user. Important variable is rp_status
+# simple state of user. Important variable is rp_status
 def users_event():
     return json.dumps({'type': 'users', 'count': len(USERS), 'rp_status': RP_STATUS})
 
@@ -64,7 +64,7 @@ async def unregister(websocket):
 			# change global RP_STATUS to false
 			global RP_STATUS 
 			RP_STATUS = False
-	# Removes websocket form user set
+	# Removes websocket from user set
 	USERS.remove(websocket)
 	# notifies all clients.
 	await notify_users()
@@ -110,8 +110,7 @@ def main(argv):
 		elif opt in ("-p", "--port"):
 			port = arg
 	print(f"Listening on {host}:{port}")
-	asyncio.get_event_loop().run_until_complete(
-		websockets.serve(web_socket_server, host, int(port)))
+	asyncio.get_event_loop().run_until_complete(websockets.serve(web_socket_server, host, int(port)))
 	asyncio.get_event_loop().run_forever()
 	
    
