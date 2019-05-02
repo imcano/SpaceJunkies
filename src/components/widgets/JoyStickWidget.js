@@ -38,6 +38,7 @@ class JoyWrapper extends Component {
                 this.setState({rasberyPy: data.rp_status});
             }
         }
+        //keyboard movement
         document.addEventListener('keydown', (event) => {
             if (event.defaultPrevented) {
                 return;
@@ -68,6 +69,7 @@ class JoyWrapper extends Component {
             }
         })
     }
+    //regular movements
     managerListener(manager) {
         manager.on('move', (e, stick) => {
             if (stick.direction) {
@@ -79,7 +81,7 @@ class JoyWrapper extends Component {
         })
         
     }
-
+    //rotation movement
     managerListener2(manager) {
         manager.on('move', (e, stick) => {
             if (stick.direction.angle === 'up') {
