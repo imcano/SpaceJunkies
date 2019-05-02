@@ -26,7 +26,7 @@ class JoyWrapper extends Component {
         }
     }
     componentDidMount(){
-        if (window.location.host === "localhost:3000") {
+        if (window.location.hostname === "localhost:3000") {
             this.socket = new WebSocket('ws://localhost:3030')
         } else {
             //change to our IP address

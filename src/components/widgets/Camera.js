@@ -18,7 +18,8 @@ class Camera extends Component {
       marginRight: "auto",
       display: "block",
       width: "100%",
-      height: "100%"
+      height: "100%",
+      transform: "rotate(180deg)"
     }
     return (
       <div>
