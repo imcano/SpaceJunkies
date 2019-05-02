@@ -11,8 +11,8 @@ import CustomFrame from './components/CustomFrame';
 // Widgets of the dashboard.
 import JoyStick from './components/widgets/JoyStickWidget';
 import Camera from './components/widgets/Camera';
-import Log from './components/widgets/Log';
-// import LineChart from './widgets/LineChart';
+// import Log from './components/widgets/Log';
+import LineChart from './components/widgets/LineChart';
 // import DoughnutChart from './widgets/DoughnutChart';
 
 // We are using bootstrap as the UI library
@@ -31,7 +31,7 @@ class App extends Component {
       // Widgets that are available in the dashboard
       widgets: {
         Log: {
-          type: Log,
+          type: LineChart,
           title: 'Log',
         },
         JoyStick: {
