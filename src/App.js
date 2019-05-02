@@ -30,9 +30,9 @@ class App extends Component {
     this.state = {
       // Widgets that are available in the dashboard
       widgets: {
-        Log: {
+        Data: {
           type: LineChart,
-          title: 'Log',
+          title: 'Data',
         },
         JoyStick: {
           type: JoyStick,
@@ -53,10 +53,13 @@ class App extends Component {
         }, {
           columns: [{
             className: 'col-md-8 col-sm-8 col-xs-8',
-            widgets: [{key: 'Log'}],
+            widgets: [{key: 'Data'}],
           }, {
             className: 'col-md-4 col-sm-4 col-xs-4',
             widgets: [{key: 'JoyStick'}],
+          }, {
+            className: 'col-md-8 col-sm-8 col-xs-8',
+            widgets: [{key: 'Data'}],
           }],
         }],
       },

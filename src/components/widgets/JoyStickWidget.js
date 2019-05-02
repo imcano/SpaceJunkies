@@ -108,7 +108,7 @@ class JoyWrapper extends Component {
                 { rasberyPy ?
                     <React.Fragment>
                         <h2 className='text-center'>Direction</h2>
-                        <JoyStick options={joyOptions} containerStyle={containerStyle} managerListener={this.managerListener} />,
+                        <JoyStick options={joyOptions} containerStyle={containerStyle} managerListener={this.managerListener} />
                         <h2 className='text-center'>Rotation</h2>
                         <JoyStick options={joyOptions} containerStyle={containerStyle} managerListener={this.managerListener2} />
                     </React.Fragment>
