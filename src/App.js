@@ -57,14 +57,14 @@ class App extends Component {
           }],
         }, {
           columns: [{
-            className: 'col-md-12 col-sm-12 col-xs-12',
-            widgets: [{key: 'Data'}],
-          }, {
             className: 'col-md-6 col-sm-6 col-xs-6',
             widgets: [{key: 'JoyStick'}],
           }, {
             className: 'col-md-6 col-sm-6 col-xs-6',
             widgets: [{key: 'JoyStickRotation'}],
+          }, {
+            className: 'col-md-12 col-sm-12 col-xs-12',
+            widgets: [{key: 'Data'}],
           }],
         }],
       },
