@@ -48,25 +48,29 @@ class JoyWrapper extends Component {
             if(key === ' ') {
                 this.socket.send(JSON.stringify({direction: "stop"}))
             }
-            if(key === 'W' || key === 'w') {
-                this.socket.send(JSON.stringify({direction: 'up'}))
+            if(key === 'Q' || key === 'q') {
+                this.socket.send(JSON.stringify({direction: "rotateX"}))
             }
-            if(key === 'A' || key === 'a') {
-                this.socket.send(JSON.stringify({direction: "left"}))
-            }
-            if(key === 'S' || key === 's') {
-                this.socket.send(JSON.stringify({direction: "down"}))
-            }
-            if(key === 'D' || key === 'd') {
-                this.socket.send(JSON.stringify({direction: "right"}))
+            if(key === 'E' || key === 'e') {
+                this.socket.send(JSON.stringify({direction: "rotateY"}))
             }
         })
     }
-    //regular movements
+
+    //rotation movement
     managerListener(manager) {
         manager.on('move', (e, stick) => {
-            if (stick.direction) {
-                this.socket.send(JSON.stringify({direction: stick.direction.angle}));
+            if (stick.direction.angle === 'up') {
+                this.socket.send(JSON.stringify({direction: "rotateY"}));
+            }
+            if (stick.direction.angle === 'down') {
+                this.socket.send(JSON.stringify({direction: "rotateX"}));
+            }
+            if (stick.direction.angle === 'left') {
+                this.socket.send(JSON.stringify({direction: "rotateX"}));
+            }
+            if (stick.direction.angle === 'right') {
+                this.socket.send(JSON.stringify({direction: "rotateY"}));
             }
         })
         manager.on('end', () => {
@@ -81,7 +85,7 @@ class JoyWrapper extends Component {
             <div>
                 { rasberyPy ?
                     <React.Fragment>
-                        <h2 className='text-center'>Direction</h2>
+                        <h2 className='text-center'>Rotation</h2>
                         <JoyStick options={joyOptions} containerStyle={containerStyle} managerListener={this.managerListener} />
                     </React.Fragment>
                     :

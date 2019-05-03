@@ -10,6 +10,7 @@ import CustomFrame from './components/CustomFrame';
 
 // Widgets of the dashboard.
 import JoyStick from './components/widgets/JoyStickWidget';
+import JoyStickRotation from './components/widgets/JoyStickRotationWidget';
 import Camera from './components/widgets/Camera';
 // import Log from './components/widgets/Log';
 import LineChart from './components/widgets/LineChart';
@@ -36,7 +37,11 @@ class App extends Component {
         },
         JoyStick: {
           type: JoyStick,
-          title: 'Joy Stick',
+          title: 'Joy Stick Direction',
+        },
+        JoyStickRotation: {
+          type: JoyStickRotation,
+          title: 'Joy Stick Rotation',
         },
         Camera: {
           type: Camera,
@@ -52,11 +57,14 @@ class App extends Component {
           }],
         }, {
           columns: [{
-            className: 'col-md-8 col-sm-12 col-xs-12',
+            className: 'col-md-12 col-sm-12 col-xs-12',
             widgets: [{key: 'Data'}],
           }, {
-            className: 'col-md-4 col-sm-4 col-xs-4',
+            className: 'col-md-6 col-sm-6 col-xs-6',
             widgets: [{key: 'JoyStick'}],
+          }, {
+            className: 'col-md-6 col-sm-6 col-xs-6',
+            widgets: [{key: 'JoyStickRotation'}],
           }],
         }],
       },
